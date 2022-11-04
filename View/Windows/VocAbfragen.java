@@ -23,12 +23,18 @@ public class VocAbfragen {
     JLabel labelRueckseite;
     JTextField tfRueckseite;
     JButton buttonBestaetigen;
+    JButton buttonNext;
+    JButton buttonGeltenLassen;
 
     private static int buttonZurueckCounter;
+    private static int buttonNextCounter;
+    private static int buttonGeltenLassenCounter;
     private static int buttonBestaetigenCounter;
 
     public VocAbfragen() {
         buttonZurueckCounter = 0;
+        buttonBestaetigenCounter = 0;
+        buttonGeltenLassenCounter = 0;
         buttonBestaetigenCounter = 0;
         objekteErstellen();
     }
@@ -106,6 +112,31 @@ public class VocAbfragen {
         View.getFrame().add(buttonBestaetigen);
         buttonBestaetigen.setVisible(false);
 
+        buttonNext = new JButton("Next");
+        buttonNext.setBounds(140, 500, 100, 50);
+        buttonNext.setHorizontalAlignment(JButton.CENTER);
+        buttonNext.setVerticalAlignment(JButton.CENTER);
+        buttonNext.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                buttonNextCounter++;
+            }
+        });
+        View.getFrame().add(buttonNext);
+        buttonNext.setVisible(false);
+
+        buttonGeltenLassen = new JButton("Gelten lassen");
+        buttonGeltenLassen.setBounds(115, 580, 150, 50);
+        buttonGeltenLassen.setHorizontalAlignment(JButton.CENTER);
+        buttonGeltenLassen.setVerticalAlignment(JButton.CENTER);
+        buttonGeltenLassen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                buttonGeltenLassenCounter++;
+            }
+        });
+        View.getFrame().add(buttonGeltenLassen);
+        buttonGeltenLassen.setVisible(false);
 
 
         
@@ -120,6 +151,8 @@ public class VocAbfragen {
         labelDeutsch.setVisible(isVisible);
         tfRueckseite.setVisible(isVisible);
         buttonBestaetigen.setVisible(isVisible);
+        buttonGeltenLassen.setVisible(isVisible);
+        buttonNext.setVisible(isVisible);
     }
 
     public static int getButtonZurueckCounter() {
