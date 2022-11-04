@@ -25,9 +25,11 @@ public class VocAbfragen {
     JButton buttonBestaetigen;
 
     private static int buttonZurueckCounter;
+    private static int buttonBestaetigenCounter;
 
     public VocAbfragen() {
         buttonZurueckCounter = 0;
+        buttonBestaetigenCounter = 0;
         objekteErstellen();
     }
 
@@ -98,16 +100,7 @@ public class VocAbfragen {
         buttonBestaetigen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                if(tfRueckseite.getText()=="hund"){
-                
-                System.out.println("Done");
-                tfRueckseite.setBackground(Color.GREEN);
-                labelDeutsch.setText("--> next");
-                }
-                else{
-                    tfRueckseite.setBackground(Color.RED);
-                    System.out.print(tfRueckseite.getText());
-                }
+                buttonBestaetigenCounter++;
             }
         });
         View.getFrame().add(buttonBestaetigen);
