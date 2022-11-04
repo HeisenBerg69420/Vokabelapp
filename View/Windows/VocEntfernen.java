@@ -12,7 +12,6 @@ import Structures.List;
 import Objects.Vokabel;
 import java.awt.event.*;
 
-
 import View.View;
 
 public class VocEntfernen {
@@ -39,7 +38,7 @@ public class VocEntfernen {
 
     private void objekteErstellen() {
 
-        //Stapelliste
+        // Stapelliste
         String[] front = new String[10];
         for (int i = 0; i < 10; i++) {
             front[i] = vokabeln[i].getFront();
@@ -47,15 +46,7 @@ public class VocEntfernen {
         listVokabel = new JList(front);
         listVokabel.setSelectedIndex(0);
         listVokabel.setBounds(120, 120, 160, 100);
-        listVokabel.addMouseListener(new MouseAdapter(){
-            @Override
-            public void mouseClicked(MouseEvent e){
-                int index = listVokabel.locationToIndex(e.getPoint());
-          if (index >= 0) {
-            Object o = listVokabel.getModel().getElementAt(index);
-            front[index] = null;
-            }
-    }});
+
         View.getFrame().add(listVokabel);
         listVokabel.setVisible(false);
 
@@ -64,25 +55,25 @@ public class VocEntfernen {
         labelHeader.setHorizontalAlignment(JLabel.CENTER);
         labelHeader.setVerticalAlignment(JLabel.CENTER);
         View.getFrame().add(labelHeader);
-        labelHeader.setVisible(false); //später in main
+        labelHeader.setVisible(false); // später in main
 
         listeHeader = new JLabel("Stapel: xxx");
         listeHeader.setBounds(100, 40, 200, 50);
         listeHeader.setHorizontalAlignment(JLabel.CENTER);
         listeHeader.setVerticalAlignment(JLabel.CENTER);
         View.getFrame().add(listeHeader);
-        listeHeader.setVisible(false); //später in main
+        listeHeader.setVisible(false); // später in main
 
         zurueckButton = new JButton("zurück");
         zurueckButton.setBounds(10, 10, 100, 60);
-        zurueckButton.setIcon(new ImageIcon("Objects/back.png")); //sieht scheiße aus am besten weg machen
+        zurueckButton.setIcon(new ImageIcon("Objects/back.png")); // sieht scheiße aus am besten weg machen
         zurueckButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 buttonZurueckCounter++;
             }
         });
-        
+
         View.getFrame().add(zurueckButton);
         zurueckButton.setVisible(false);
 
@@ -97,12 +88,16 @@ public class VocEntfernen {
         entfernenButton.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-              if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     buttonEntfernenCounter++;
                 }
             }
-            public void keyPressed(KeyEvent arg0) {}
-            public void keyReleased(KeyEvent arg0) {}   
+
+            public void keyPressed(KeyEvent arg0) {
+            }
+
+            public void keyReleased(KeyEvent arg0) {
+            }
         });
         View.getFrame().add(entfernenButton);
         entfernenButton.setVisible(false);
@@ -123,4 +118,29 @@ public class VocEntfernen {
     public JLabel getListeHeader() {
         return listeHeader;
     }
+
+    public JLabel getLabelHeader() {
+        return labelHeader;
+    }
+
+    public JButton getZurueckButton() {
+        return zurueckButton;
+    }
+
+    public JList getListVokabel() {
+        return listVokabel;
+    }
+
+    public JButton getEntfernenButton() {
+        return entfernenButton;
+    }
+
+    public static int getButtonEntfernenCounter() {
+        return buttonEntfernenCounter;
+    }
+
+    public static Vokabel[] getVokabeln() {
+        return vokabeln;
+    }
+
 }

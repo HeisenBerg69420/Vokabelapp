@@ -28,16 +28,16 @@ public class Home {
 
     private void objekteErstellen() {
         labelHello = new JLabel("HOME");
-        labelHello.setBounds(100,14,200,50);
+        labelHello.setBounds(100, 14, 200, 50);
         labelHello.setHorizontalAlignment(JLabel.CENTER);
         View.getFrame().add(labelHello);
-        labelHello.setVisible(true); //später in main
+        labelHello.setVisible(true); // später in main
 
         labelStapelAuswaehlen = new JLabel("Stapel auswählen:");
-        labelStapelAuswaehlen.setBounds(100,70,200,50);
+        labelStapelAuswaehlen.setBounds(100, 70, 200, 50);
         labelStapelAuswaehlen.setHorizontalAlignment(JLabel.CENTER);
         View.getFrame().add(labelStapelAuswaehlen);
-        labelStapelAuswaehlen.setVisible(true); //später in main
+        labelStapelAuswaehlen.setVisible(true); // später in main
 
         buttonVocLernen = new JButton("Lernen");
         buttonVocLernen.setBounds(120, 450, 160, 60);
@@ -51,9 +51,9 @@ public class Home {
         View.getFrame().add(buttonVocLernen);
         buttonVocLernen.setVisible(true);
 
-        //Vokabeln adden
+        // Vokabeln adden
         buttonVocAdden = new JButton("Vokabeln hinzufügen");
-        buttonVocAdden.setBounds(20,600,160,60);
+        buttonVocAdden.setBounds(20, 600, 160, 60);
         buttonVocAdden.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -63,10 +63,9 @@ public class Home {
         View.getFrame().add(buttonVocAdden);
         buttonVocAdden.setVisible(true);
 
-
-        //Vokabeln entfernen
+        // Vokabeln entfernen
         buttonVocEntfernen = new JButton("Vokabeln entfernen");
-        buttonVocEntfernen.setBounds(210,600,160,60);
+        buttonVocEntfernen.setBounds(210, 600, 160, 60);
         buttonVocEntfernen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -76,18 +75,15 @@ public class Home {
         View.getFrame().add(buttonVocEntfernen);
         buttonVocEntfernen.setVisible(true);
 
-
-
-        //Stapelliste
+        // Stapelliste
         String[] stapel = { "Englisch", "Französisch", "Spanisch", "Altgriechisch" };
         listStapel = new JList(stapel);
         listStapel.setSelectedIndex(0);
-        listStapel.setBounds(120,120,160,100);
+        listStapel.setBounds(120, 120, 160, 100);
         View.getFrame().add(listStapel);
         listStapel.setVisible(true);
-        
+
     }
-    
 
     public void isVisible(boolean isVisible) {
         labelHello.setVisible(isVisible);
@@ -110,10 +106,32 @@ public class Home {
         return buttonVocEntfernenCounter;
     }
 
-    
     public static String getSprache() {
         return listStapel.getSelectedValue().toString();
     }
 
-    
+    public static JLabel getLabelHello() {
+        return labelHello;
+    }
+
+    public static JLabel getLabelStapelAuswaehlen() {
+        return labelStapelAuswaehlen;
+    }
+
+    public static JButton getButtonVocLernen() {
+        return buttonVocLernen;
+    }
+
+    public static JButton getButtonVocAdden() {
+        return buttonVocAdden;
+    }
+
+    public static JButton getButtonVocEntfernen() {
+        return buttonVocEntfernen;
+    }
+
+    public static JList getListStapel() {
+        return listStapel;
+    }
+
 }
