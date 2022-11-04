@@ -12,7 +12,7 @@ import javax.swing.*;
 
 import Objects.Vokabel;
 import View.View;
-
+import java.awt.event.*;
 public class VocHinzufuegen {
     JLabel labelHeader;
     JLabel listeHeader;
@@ -73,6 +73,12 @@ public class VocHinzufuegen {
         tfVorderseite = new JTextField("Vorne");
         tfVorderseite.setBounds(40, 140, 310, 150);
         tfVorderseite.setHorizontalAlignment(JLabel.CENTER);
+        tfVorderseite.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                tfVorderseite.setText("");
+            }
+        });
         View.getFrame().add(tfVorderseite);
         tfVorderseite.setVisible(false);
 
@@ -84,6 +90,12 @@ public class VocHinzufuegen {
         tfRueckseite = new JTextField("Hinten");
         tfRueckseite.setBounds(40, 340, 310, 150);
         tfRueckseite.setHorizontalAlignment(JLabel.CENTER);
+        tfRueckseite.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                tfRueckseite.setText("");
+            }
+        });
         View.getFrame().add(tfRueckseite);
         tfRueckseite.setVisible(false);
         
