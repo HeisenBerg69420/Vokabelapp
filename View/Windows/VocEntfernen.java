@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import Structures.List;
 import Objects.Vokabel;
+import java.awt.event.*;
 
 
 import View.View;
@@ -46,6 +47,15 @@ public class VocEntfernen {
         listVokabel = new JList(front);
         listVokabel.setSelectedIndex(0);
         listVokabel.setBounds(120, 120, 160, 100);
+        listVokabel.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                int index = listVokabel.locationToIndex(e.getPoint());
+          if (index >= 0) {
+            Object o = listVokabel.getModel().getElementAt(index);
+            front[index] = null;
+            }
+    }});
         View.getFrame().add(listVokabel);
         listVokabel.setVisible(false);
 

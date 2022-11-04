@@ -5,7 +5,11 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
+import javax.swing.event.MouseInputListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.*;
+import java.awt.*;
 
 import View.View;
 
@@ -75,9 +79,15 @@ public class VocAbfragen {
         View.getFrame().add(labelDeutsch);
         labelDeutsch.setVisible(false);
         
-        tfRueckseite = new JTextField();
+        tfRueckseite = new JTextField("Eingeben");
         tfRueckseite.setBounds(100, 300, 200, 50);
         tfRueckseite.setHorizontalAlignment(JLabel.CENTER);
+        tfRueckseite.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                tfRueckseite.setText("");
+            }
+        });
         View.getFrame().add(tfRueckseite);
         tfRueckseite.setVisible(false);
 
@@ -88,13 +98,21 @@ public class VocAbfragen {
         buttonBestaetigen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
+                if(tfRueckseite.getText()=="hund"){
+                
                 System.out.println("Done");
-                tfRueckseite.setText(" ");
+                tfRueckseite.setBackground(Color.GREEN);
                 labelDeutsch.setText("--> next");
+                }
+                else{
+                    tfRueckseite.setBackground(Color.RED);
+                    System.out.print(tfRueckseite.getText());
+                }
             }
         });
         View.getFrame().add(buttonBestaetigen);
         buttonBestaetigen.setVisible(false);
+
 
 
         
