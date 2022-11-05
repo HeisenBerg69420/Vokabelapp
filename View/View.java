@@ -120,7 +120,9 @@ public class View {
                 default: break;
             }
 
-            switched = false;
+            //hier überprüfen, ob die hinzufügen buttons gedrückt wurden etc und ob die entfernen button gedrückt wurden
+            //wenn ja dann den text getten und in die Liste, die sich am besten in Engine befindet hinzufügen als neue Vokabel
+            //danach immer den view aktualisieren und die aktuelle list anzeigen -> der View wird also dauerhaft geupdated
         }
             
             

@@ -93,7 +93,7 @@ public class VocAbfragen {
         tfRueckseite.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
-                tfRueckseite.setText("");
+                tfRueckseite.setText("");  //in View versuchen mit timeslice
             }
         });
         View.getFrame().add(tfRueckseite);
