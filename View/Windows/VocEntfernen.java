@@ -78,7 +78,7 @@ public class VocEntfernen {
         zurueckButton.setVisible(false);
 
         entfernenButton = new JButton("Entfernen");
-        entfernenButton.setBounds(180, 600, 100, 50);
+        entfernenButton.setBounds(110, 550, 180, 70);
         entfernenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {

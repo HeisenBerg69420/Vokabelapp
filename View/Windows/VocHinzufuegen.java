@@ -105,7 +105,7 @@ public class VocHinzufuegen {
         tfRueckseite.setVisible(false);
 
         hinzufuegenButton = new JButton("Hinzufügen");
-        hinzufuegenButton.setBounds(150, 550, 100, 50);
+        hinzufuegenButton.setBounds(110, 550, 180, 70);
         hinzufuegenButton.setHorizontalAlignment(JLabel.CENTER);
         hinzufuegenButton.addActionListener(new ActionListener() {
             @Override

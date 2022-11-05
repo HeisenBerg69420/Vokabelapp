@@ -100,7 +100,7 @@ public class VocAbfragen {
         tfRueckseite.setVisible(false);
 
         buttonBestaetigen = new JButton("Bestätigen");
-        buttonBestaetigen.setBounds(140, 500, 100, 50);
+        buttonBestaetigen.setBounds(125, 500, 150, 50);
         buttonBestaetigen.setHorizontalAlignment(JButton.CENTER);
         buttonBestaetigen.setVerticalAlignment(JButton.CENTER);
         buttonBestaetigen.addActionListener(new ActionListener() {
@@ -113,7 +113,7 @@ public class VocAbfragen {
         buttonBestaetigen.setVisible(false);
 
         buttonNext = new JButton("Next");
-        buttonNext.setBounds(140, 500, 100, 50);
+        buttonNext.setBounds(125, 560, 150, 50);
         buttonNext.setHorizontalAlignment(JButton.CENTER);
         buttonNext.setVerticalAlignment(JButton.CENTER);
         buttonNext.addActionListener(new ActionListener() {
@@ -126,7 +126,7 @@ public class VocAbfragen {
         buttonNext.setVisible(false);
 
         buttonGeltenLassen = new JButton("Gelten lassen");
-        buttonGeltenLassen.setBounds(115, 580, 150, 50);
+        buttonGeltenLassen.setBounds(125, 620, 150, 50);
         buttonGeltenLassen.setHorizontalAlignment(JButton.CENTER);
         buttonGeltenLassen.setVerticalAlignment(JButton.CENTER);
         buttonGeltenLassen.addActionListener(new ActionListener() {
