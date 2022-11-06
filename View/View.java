@@ -26,6 +26,9 @@ public class View {
     private static int buttonVocEntfernenCounterOld;
     private static int buttonVocEntfernenZurueckCounterOld;
 
+    private static int buttonVocHinzufuegenButtonCounterOld;
+    private static int buttonVocEntfernenButtonCounterOld;
+
     public View() {
         objekteErstellen();
         buttonZurueckCounterOldHome = 0;
@@ -123,6 +126,24 @@ public class View {
             //hier überprüfen, ob die hinzufügen buttons gedrückt wurden etc und ob die entfernen button gedrückt wurden
             //wenn ja dann den text getten und in die Liste, die sich am besten in Engine befindet hinzufügen als neue Vokabel
             //danach immer den view aktualisieren und die aktuelle list anzeigen -> der View wird also dauerhaft geupdated
+            //oder besser ist, der Viewe wird nur geupdated wenn wirklich etwas geändert wurde
+            //also ähnlich wie bei den Windows
+
+            //hinzufügen button
+            if(VocHinzufuegen.getButtonHinzufuegenCounter() != buttonVocHinzufuegenButtonCounterOld) {
+                //hier neue Vokabel hinzufügen
+                buttonVocHinzufuegenButtonCounterOld = VocHinzufuegen.getButtonHinzufuegenCounter();
+            }
+
+            //entfernen button
+            if(VocEntfernen.getButtonEntfernenCounter() != buttonVocEntfernenButtonCounterOld) {
+                //hier die aktuell ausgewählte Vokabel getten und dann aus dem Stapel entfernen
+                buttonVocEntfernenButtonCounterOld = VocEntfernen.getButtonEntfernenCounter();
+            }
+
+            //methode zum Updaten der Liste in Voc Entfernen
+
+            //methode, die die buttons aus Voc Abfragen überprüft und dann immmer neue Vokabeln aus der Liste Anzeigt
         }
             
             
