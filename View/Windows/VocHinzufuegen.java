@@ -84,6 +84,12 @@ public class VocHinzufuegen {
                 buttonVorderseiteCounter++;
             }
         });
+        tfVorderseite.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                tfVorderseite.setText("");  //in View versuchen mit timeslice
+            }
+        });
         View.getFrame().add(tfVorderseite);
         tfVorderseite.setVisible(false);
 
@@ -95,10 +101,10 @@ public class VocHinzufuegen {
         tfRueckseite = new JTextField("Hinten");
         tfRueckseite.setBounds(40, 340, 310, 150);
         tfRueckseite.setHorizontalAlignment(JLabel.CENTER);
-        tfRueckseite.addMouseListener(new MouseAdapter() {
+        tfRueckseite.addMouseListener(new MouseAdapter(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-                buttonRueckseiteCounter++;
+            public void mouseClicked(MouseEvent e){
+                tfRueckseite.setText("");  //in View versuchen mit timeslice
             }
         });
         View.getFrame().add(tfRueckseite);
