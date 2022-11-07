@@ -20,13 +20,22 @@ public class VocEntfernen {
     JButton zurueckButton;
     JList listVokabel;
     JButton entfernenButton;
+    JTextField bearbeitenVor;
+    JTextField bearbeitenHint;
+    JButton bestaetigenButtonBearb;
 
     private static int buttonZurueckCounter;
     private static int buttonEntfernenCounter;
+    private static int tfBearbeitenHintCounter;
+    private static int tfBearbeitenVorCounter;
+    private static int buttonbearbCounter;
+    
+    
 
     public VocEntfernen() {
         buttonZurueckCounter = 0;
         buttonEntfernenCounter = 0;
+        
         objekteErstellen();
 
     }
@@ -35,10 +44,21 @@ public class VocEntfernen {
 
         // Stapelliste
         String[] front = new String[10];
+        for(int i=0; i<10; i++){
+            front[i] = "hund";
+        }
         listVokabel = new JList(front);
         listVokabel.setSelectedIndex(0);
-        listVokabel.setBounds(120, 120, 160, 100);
-
+        listVokabel.setBounds(100, 120, 200, 100);
+        listVokabel.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                int index = listVokabel.locationToIndex(e.getPoint());
+          if (index >= 0) {
+            Object o = listVokabel.getModel().getElementAt(index);
+            front[index] = "du schwanz";
+            }
+    }});
         View.getFrame().add(listVokabel);
         listVokabel.setVisible(false);
 
@@ -70,7 +90,7 @@ public class VocEntfernen {
         zurueckButton.setVisible(false);
 
         entfernenButton = new JButton("Entfernen");
-        entfernenButton.setBounds(110, 550, 180, 70);
+        entfernenButton.setBounds(110, 250, 180, 70);
         entfernenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -93,6 +113,61 @@ public class VocEntfernen {
         });
         View.getFrame().add(entfernenButton);
         entfernenButton.setVisible(false);
+
+        bearbeitenHint = new JTextField("Vorne");
+        bearbeitenHint.setBounds(75, 475, 250, 75);
+        bearbeitenHint.setHorizontalAlignment(JLabel.CENTER);
+    
+        bearbeitenHint.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                bearbeitenHint.setText("");  //in View versuchen mit timeslice
+            }
+        });
+        View.getFrame().add(bearbeitenHint);
+        bearbeitenHint.setVisible(false);
+
+        
+        bearbeitenVor = new JTextField("Entfernen");
+        bearbeitenVor.setBounds(75, 365, 250, 75);
+        bearbeitenVor.setHorizontalAlignment(JLabel.CENTER);
+        
+        bearbeitenVor.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                bearbeitenVor.setText("");  //in View versuchen mit timeslice
+            }
+        });
+        View.getFrame().add(bearbeitenVor);
+        bearbeitenVor.setVisible(false);
+
+        bestaetigenButtonBearb = new JButton("Bestätigen");
+        bestaetigenButtonBearb.setBounds(110, 600, 180, 70);
+        bestaetigenButtonBearb.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                buttonbearbCounter++;
+            }
+        });
+        bestaetigenButtonBearb.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    buttonbearbCounter++;
+                }
+            }
+
+            public void keyPressed(KeyEvent arg0) {
+            }
+
+            public void keyReleased(KeyEvent arg0) {
+            }
+        });
+        View.getFrame().add(bestaetigenButtonBearb);
+        bestaetigenButtonBearb.setVisible(false);
+
+
+
     }
 
     public void isVisible(boolean isVisible) {
@@ -101,6 +176,9 @@ public class VocEntfernen {
         zurueckButton.setVisible(isVisible);
         listVokabel.setVisible(isVisible);
         entfernenButton.setVisible(isVisible);
+        bearbeitenHint.setVisible(isVisible);
+        bearbeitenVor.setVisible(isVisible);
+        bestaetigenButtonBearb.setVisible(isVisible);
     }
 
     public static int getButtonZurueckCounter() {
@@ -129,6 +207,21 @@ public class VocEntfernen {
 
     public static int getButtonEntfernenCounter() {
         return buttonEntfernenCounter;
+    }
+    public JTextField getBearbeitenHint() {
+        return bearbeitenHint;
+    }
+    public JTextField getBearbeitenVor() {
+        return bearbeitenVor;
+    }
+    public static int getTfBearbeitenHintCounter() {
+        return tfBearbeitenHintCounter;
+    }
+    public static int getTfBearbeitenVorCounter() {
+        return tfBearbeitenVorCounter;
+    }
+    public static int getButtonbearbCounter() {
+        return buttonbearbCounter;
     }
 
 }
