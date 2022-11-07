@@ -15,15 +15,15 @@ import View.View;
 import java.awt.event.*;
 
 public class VocHinzufuegen {
-    JLabel labelHeader;
-    JLabel listeHeader;
-    JButton zurueckButton;
-    JLabel labelVorderseite;
-    JLabel labelRueckseite;
-    JTextField tfVorderseite;
-    JTextField tfRueckseite;
+    static JLabel labelHeader;
+    static JLabel listeHeader;
+    static JButton zurueckButton;
+    static JLabel labelVorderseite;
+    static JLabel labelRueckseite;
+    static JTextField tfVorderseite;
+    static JTextField tfRueckseite;
 
-    JButton hinzufuegenButton;
+    static JButton hinzufuegenButton;
 
     private static int buttonHinzufuegenCounter;
     private static Vokabel vokabel;
@@ -177,15 +177,15 @@ public class VocHinzufuegen {
         return labelRueckseite;
     }
 
-    public JTextField getTfVorderseite() {
+    public static JTextField getTfVorderseite() {
         return tfVorderseite;
     }
 
-    public JTextField getTfRueckseite() {
+    public static JTextField getTfRueckseite() {
         return tfRueckseite;
     }
 
-    public JButton getHinzufuegenButton() {
+    public static JButton getHinzufuegenButton() {
         return hinzufuegenButton;
     }
 
@@ -200,5 +200,7 @@ public class VocHinzufuegen {
     public static int getButtonRueckseiteCounter() {
         return buttonRueckseiteCounter;
     }
+
+    
     
 }

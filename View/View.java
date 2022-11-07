@@ -129,21 +129,28 @@ public class View {
             //oder besser ist, der Viewe wird nur geupdated wenn wirklich etwas geändert wurde
             //also ähnlich wie bei den Windows
 
+            switched = false;
+
             //hinzufügen button
             if(VocHinzufuegen.getButtonHinzufuegenCounter() != buttonVocHinzufuegenButtonCounterOld) {
                 //hier neue Vokabel hinzufügen
                 buttonVocHinzufuegenButtonCounterOld = VocHinzufuegen.getButtonHinzufuegenCounter();
+                switched = true;
             }
 
             //entfernen button
             if(VocEntfernen.getButtonEntfernenCounter() != buttonVocEntfernenButtonCounterOld) {
                 //hier die aktuell ausgewählte Vokabel getten und dann aus dem Stapel entfernen
                 buttonVocEntfernenButtonCounterOld = VocEntfernen.getButtonEntfernenCounter();
+                switched = true;
             }
 
-            //methode zum Updaten der Liste in Voc Entfernen
+            if(switched) {
+                //methode zum Updaten der Liste in Voc Entfernen
+            }
 
             //methode, die die buttons aus Voc Abfragen überprüft und dann immmer neue Vokabeln aus der Liste Anzeigt
+
         }
             
             
