@@ -23,15 +23,10 @@ public class VocEntfernen {
 
     private static int buttonZurueckCounter;
     private static int buttonEntfernenCounter;
-    private static Vokabel[] vokabeln;
 
     public VocEntfernen() {
         buttonZurueckCounter = 0;
         buttonEntfernenCounter = 0;
-        vokabeln = new Vokabel[10];
-        for (int i = 0; i < 10; i++) {
-            vokabeln[i] = new Vokabel("Hund", "dog");
-        }
         objekteErstellen();
 
     }
@@ -40,9 +35,6 @@ public class VocEntfernen {
 
         // Stapelliste
         String[] front = new String[10];
-        for (int i = 0; i < 10; i++) {
-            front[i] = vokabeln[i].getFront();
-        }
         listVokabel = new JList(front);
         listVokabel.setSelectedIndex(0);
         listVokabel.setBounds(120, 120, 160, 100);
@@ -137,10 +129,6 @@ public class VocEntfernen {
 
     public static int getButtonEntfernenCounter() {
         return buttonEntfernenCounter;
-    }
-
-    public static Vokabel[] getVokabeln() {
-        return vokabeln;
     }
 
 }
