@@ -29,6 +29,15 @@ public class View {
     private static int buttonVocHinzufuegenButtonCounterOld;
     private static int buttonVocEntfernenButtonCounterOld;
 
+    
+    private static int buttonNextCounterOld;
+    private static int buttonBestaetigenCounterOld;
+    private static int buttonGeltenLassenCounterOld;
+    private static int tfBearbeitenHintCounterOld;
+    private static int tfBearbeitenVorCounterOld;
+    private static int buttonbearbCounterOld;
+    
+
     public View() {
         objekteErstellen();
         buttonZurueckCounterOldHome = 0;
@@ -131,19 +140,46 @@ public class View {
 
             switched = false;
 
-            //hinzufügen button
-            if(VocHinzufuegen.getButtonHinzufuegenCounter() != buttonVocHinzufuegenButtonCounterOld) {
-                //hier neue Vokabel hinzufügen
-                buttonVocHinzufuegenButtonCounterOld = VocHinzufuegen.getButtonHinzufuegenCounter();
-                switched = true;
-            }
+          //hinzufügen button
+          if(VocHinzufuegen.getButtonHinzufuegenCounter() != buttonVocHinzufuegenButtonCounterOld) {
+            //hier neue Vokabel hinzufügen
+            buttonVocHinzufuegenButtonCounterOld = VocHinzufuegen.getButtonHinzufuegenCounter();
+        }
 
-            //entfernen button
-            if(VocEntfernen.getButtonEntfernenCounter() != buttonVocEntfernenButtonCounterOld) {
-                //hier die aktuell ausgewählte Vokabel getten und dann aus dem Stapel entfernen
-                buttonVocEntfernenButtonCounterOld = VocEntfernen.getButtonEntfernenCounter();
-                switched = true;
-            }
+        //entfernen button
+        if(VocEntfernen.getButtonEntfernenCounter() != buttonVocEntfernenButtonCounterOld) {
+            //hier die aktuell ausgewählte Vokabel getten und dann aus dem Stapel entfernen
+            buttonVocEntfernenButtonCounterOld = VocEntfernen.getButtonEntfernenCounter();
+        }
+
+        if(VocAbfragen.getButtonBestaetigenCounter()!= buttonBestaetigenCounterOld){
+
+            buttonBestaetigenCounterOld = VocAbfragen.getButtonBestaetigenCounter();
+        }
+        if(VocAbfragen.getButtonNextCounter()!= buttonNextCounterOld){
+
+            buttonNextCounterOld = VocAbfragen.getButtonNextCounter();
+        }
+        if(VocAbfragen.getButtonGeltenLassenCounter()!= buttonGeltenLassenCounterOld){
+
+            buttonGeltenLassenCounterOld = VocAbfragen.getButtonGeltenLassenCounter();
+        }
+
+        if(VocEntfernen.getButtonbearbCounter()!= buttonbearbCounterOld){
+
+            buttonGeltenLassenCounterOld = VocEntfernen.getButtonbearbCounter();
+        }
+        if(VocEntfernen.getTfBearbeitenHintCounter()!= tfBearbeitenHintCounterOld){
+
+            tfBearbeitenHintCounterOld = VocEntfernen.getTfBearbeitenHintCounter();
+        }
+        if(vocEntfernen.getTfBearbeitenVorCounter()!= tfBearbeitenVorCounterOld){
+
+            buttonGeltenLassenCounterOld = VocAbfragen.getButtonGeltenLassenCounter();
+        }
+       
+        
+        
 
             if(switched) {
                 //methode zum Updaten der Liste in Voc Entfernen

@@ -190,6 +190,20 @@ public class VocAbfragen {
     public JButton getButtonBestaetigen() {
         return buttonBestaetigen;
     }
+    public static int getButtonGeltenLassenCounter() {
+        return buttonGeltenLassenCounter;
+    }
+
+    public static int getButtonBestaetigenCounter() {
+        return buttonBestaetigenCounter;
+    }
+
+    public static int getButtonNextCounter(){
+
+    return buttonNextCounter;
+    }
+
+   
 
     
 }
